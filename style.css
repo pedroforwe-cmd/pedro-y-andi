@@ -544,6 +544,24 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
     transform: scale(1.05);
 }
 
+/* === CANCION === */
+#cancion {
+    padding: 80px 24px;
+    text-align: center;
+}
+
+#cancion h2 {
+    font-size: 2.5rem;
+    color: var(--brown);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.spotify-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 /* === FOOTER === */
 footer {
     text-align: center;
