@@ -395,6 +395,147 @@ h1, h2, h3 {
     color: var(--text-light);
 }
 
+/* === GALERIA === */
+#galeria {
+    padding: 100px 24px;
+}
+
+#galeria h2 {
+    font-size: 2.5rem;
+    color: var(--brown);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+.gallery-tall {
+    grid-row: span 2;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* === LUGARES === */
+#lugares {
+    padding: 100px 24px;
+    background: var(--warm);
+}
+
+#lugares h2 {
+    font-size: 2.5rem;
+    color: var(--brown);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.lugares-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lugar-card {
+    text-align: center;
+    padding: 32px 20px;
+    background: var(--white);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.lugar-card:hover {
+    transform: translateY(-4px);
+}
+
+.lugar-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.lugar-card h3 {
+    font-size: 1.1rem;
+    color: var(--brown);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.lugar-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 200px;
+    }
+    .gallery-wide { grid-column: span 2; }
+    .gallery-tall { grid-row: span 1; }
+    .lugares-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    .gallery-wide { grid-column: span 1; }
+    .lugares-grid { grid-template-columns: 1fr; }
+}
+
 /* === TIMELINE === */
 #timeline {
     padding: 100px 24px;
