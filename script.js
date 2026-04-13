@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+    // Floating player toggle
+    const toggle = document.getElementById('playerToggle');
+    const embed = document.getElementById('playerEmbed');
+    if (toggle && embed) {
+        toggle.addEventListener('click', () => {
+            embed.classList.toggle('open');
+            toggle.textContent = embed.classList.contains('open') ? '✕' : '♫';
+        });
+    }
+
 const style = document.createElement('style');
 style.textContent = `.visible { opacity: 1 !important; transform: translateY(0) !important; }`;
 document.head.appendChild(style);
